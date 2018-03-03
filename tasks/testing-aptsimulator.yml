@@ -1,0 +1,25 @@
+---
+# https://github.com/NextronSystems/APTSimulator/
+# https://github.com/NextronSystems/APTSimulator/releases/download/v{{ win_aptsimulator_v }}/APTSimulator_pw_apt.zip
+
+- name: 7-zip installation
+  win_chocolatey:
+    name: 7zip
+    state: present
+    upgrade: no
+
+- name: Testing Detections | Download NextronSystems APTSimulator
+  get_url:
+    url: "https://github.com/NextronSystems/APTSimulator/releases/download/v{{ win_aptsimulator_v }}/APTSimulator_pw_apt.zip"
+    dest: "{{ win_temp_dir }}/APTSimulator_pw_apt.zip"
+
+- name: Testing Detections | Unarchive NextronSystems APTSimulator
+  win_shell: 7zip e -y -tzip -papt APTSimulator_pw_apt.zip
+  args:
+    chdir: "{{ win_temp_dir }}"
+
+## FIXME! batch mode?
+- name: Testing Detections | Execute NextronSystems APTSimulator
+  win_shell: APTSimulator.bat
+  args:
+    chdir: "{{ win_temp_dir }}/APTSimulator"
