@@ -3,4 +3,4 @@
 win_temp_dir: 'c:\Program Files\ansible'
 win_log_dir: 'c:\ProgramData\ansible\log'
 
-win_aptsimulator_v: 0.7.0
+win_aptsimulator_v: 0.7
