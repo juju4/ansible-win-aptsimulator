@@ -82,7 +82,7 @@ install:
 build: off
 test_script:
 - cmd: "%CYG_BASH% -lc 'ansible-playbook /cygdrive/c/projects/ansible-win-aptsimulator/test/integration/default/default.yml --syntax-check'"
-- cmd: "%CYG_BASH% -lc 'ansible-playbook -i /cygdrive/c/projects/ansible-win-aptsimulator/test/appveyor/inventory /cygdrive/c/projects/ansible-win-aptsimulator/test/integration/default/default.yml -vvv $ANSIBLE_EXTRA_VARS'"
+- cmd: "%CYG_BASH% -lc 'ansible-playbook -i /cygdrive/c/projects/ansible-win-aptsimulator/test/appveyor/inventory /cygdrive/c/projects/ansible-win-aptsimulator/test/integration/default/default.yml -vvvv $ANSIBLE_EXTRA_VARS'"
 
 after_test:
 - cmd: |
