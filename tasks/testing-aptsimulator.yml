@@ -15,7 +15,7 @@
   when: win_aptsimulator_dl
 
 - name: Testing Detections | Unarchive NextronSystems APTSimulator
-  win_shell: 7zip e -y -tzip -papt APTSimulator_pw_apt.zip
+  win_shell: 7z.exe e -y -tzip -papt APTSimulator_pw_apt.zip
   args:
     chdir: "{{ win_temp_dir }}"
   when: win_aptsimulator_dl
