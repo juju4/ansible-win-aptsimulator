@@ -9,7 +9,7 @@
     upgrade: no
 
 - name: Testing Detections | Download NextronSystems APTSimulator
-  get_url:
+  win_get_url:
     url: "https://github.com/NextronSystems/APTSimulator/releases/download/v{{ win_aptsimulator_v }}/APTSimulator_pw_apt.zip"
     dest: "{{ win_temp_dir }}/APTSimulator_pw_apt.zip"
   when: win_aptsimulator_dl
