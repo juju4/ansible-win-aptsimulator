@@ -89,6 +89,8 @@ after_test:
     %CYG_BASH% -lc 'ansible-playbook -i /cygdrive/c/projects/ansible-win-aptsimulator/test/appveyor/inventory /cygdrive/c/projects/ansible-win-aptsimulator/test/integration/default/default.yml $ANSIBLE_EXTRA_VARS'
 - ps: Get-WinEvent -LogName 'Microsoft-Windows-Powershell/Operational' | Select -First 20
 #- ps: Get-MpThreatDetection | Sort InitialDetection -Descending
+
+on_finish:
 - ps: Get-ChildItem -Path "C:\Program Files\ansible"
 
 notifications:
