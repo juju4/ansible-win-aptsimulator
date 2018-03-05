@@ -91,7 +91,7 @@ after_test:
 #- ps: Get-MpThreatDetection | Sort InitialDetection -Descending
 
 on_finish:
-- ps: Get-ChildItem -Path "C:\Program Files\ansible"
+- ps: Get-ChildItem -Path "C:\Program Files\ansible" -Recurse
 
 notifications:
 - provider: Email
