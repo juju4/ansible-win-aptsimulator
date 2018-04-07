@@ -11,18 +11,19 @@
 - name: Testing Detections | Download NextronSystems APTSimulator
   win_get_url:
     url: "https://github.com/NextronSystems/APTSimulator/releases/download/v{{ win_aptsimulator_v }}/APTSimulator_pw_apt.zip"
-    dest: "{{ win_temp_dir }}/APTSimulator_pw_apt.zip"
+    dest: "{{ win_temp_dir }}\\APTSimulator_pw_apt.zip"
   when: win_aptsimulator_dl
 
 - name: Testing Detections | Unarchive NextronSystems APTSimulator
-  win_shell: 7z.exe e -y -tzip -papt APTSimulator_pw_apt.zip
+  win_shell: "7z.exe x -y -tzip -papt APTSimulator_pw_apt.zip"
   args:
     chdir: "{{ win_temp_dir }}"
+    creates: "{{ win_temp_dir }}\\APTSimulator\\APTSimulator.bat"
   when: win_aptsimulator_dl
 
 ## FIXME! batch mode?
 - name: Testing Detections | Execute NextronSystems APTSimulator
   win_command: "cmd.exe /c APTSimulator.bat"
   args:
-    chdir: "{{ win_temp_dir }}"
+    chdir: "{{ win_temp_dir }}\\APTSimulator"
   when: win_aptsimulator_execute
