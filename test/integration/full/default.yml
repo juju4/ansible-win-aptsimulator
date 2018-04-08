@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  become_method: runas
+  vars:
+    - win_aptsimulator_dl: true
+    - win_aptsimulator_execute: true
+    - win_osquery_interval: 60
+    - win_osquery_interval2: 60
+  roles:
+    - juju4.win-eventlog
+    - juju4.win-audit
+    - juju4.win-applocker
+    - juju4.win-sysmon
+    - juju4.win-osquery
+    - juju4.win-aptsimulator
