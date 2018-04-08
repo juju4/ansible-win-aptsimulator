@@ -9,3 +9,4 @@
     - "{{ win_log_dir }}"
 
 - include: testing-aptsimulator.yml
+- include: testing-aptsimulator-detections.yml

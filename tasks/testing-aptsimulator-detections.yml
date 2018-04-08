@@ -1,0 +1,22 @@
+---
+
+- block:
+    - name: wait 2 minutes for osquery to collect and write data
+      pause:
+      minutes: 2
+
+    - name: testing | Ensure inspec is present
+      win_chocolatey:
+        name: inspec
+        state: present
+
+    - name: testing | run aptsimulator-baseline (very slow...)
+      win_command: "c:\\opscode\\inspec\\bin\\inspec.bat exec https://github.com/juju4/aptsimulator-baseline >{{ win_log_dir }}\\inspec-aptsimulator.log"
+      ignore_errors: true
+
+    - name: testing | inspec results
+      win_shell: "Get-Content -Path \"{{ win_log_dir }}\\inspec-aptsimulator.log\""
+      changed_when: false
+      ignore_errors: true
+
+  when: win_aptsimulator_testing_inspec
