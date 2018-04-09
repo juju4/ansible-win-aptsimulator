@@ -23,7 +23,7 @@
 
 ## FIXME! batch mode?
 - name: Testing Detections | Execute NextronSystems APTSimulator
-  win_command: "cmd.exe /c APTSimulator.bat"
+  win_command: "cmd.exe /c APTSimulator.bat -b"
   args:
     chdir: "{{ win_temp_dir }}\\APTSimulator"
   when: win_aptsimulator_execute
