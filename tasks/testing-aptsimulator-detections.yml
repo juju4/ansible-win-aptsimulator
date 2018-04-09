@@ -3,7 +3,7 @@
 - block:
     - name: wait 2 minutes for osquery to collect and write data
       pause:
-      minutes: 2
+        minutes: 2
 
     - name: testing | Ensure inspec is present
       win_chocolatey:
