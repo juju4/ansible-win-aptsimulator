@@ -15,7 +15,6 @@
 
 - block:
     - name: Ensure attacker user exists
-      win_user
       win_user:
         name: "{{ win_aptsimulator_user }}"
         password: "{{ win_aptsimulator_user_pass }}"
