@@ -27,3 +27,8 @@
   args:
     chdir: "{{ win_temp_dir }}\\APTSimulator"
   when: win_aptsimulator_execute
+  register: aptsimul
+- name: Testing Detections | save APTSimulator results to file
+  win_copy:
+    content: "{{ aptsimul.stdout }}"
+    dest: "{{ win_log_dir }}\\aptsimulator-log.txt"
