@@ -8,18 +8,26 @@
     state: present
     upgrade: no
 
+- name: Check if already have APTSimulator archive
+  win_stat:
+    path: "{{ win_temp_dir }}\\APTSimulator_pw_apt.zip"
+  register: aptarchive
 - name: Testing Detections | Download NextronSystems APTSimulator
   win_get_url:
     url: "https://github.com/NextronSystems/APTSimulator/releases/download/v{{ win_aptsimulator_v }}/APTSimulator_pw_apt.zip"
     dest: "{{ win_temp_dir }}\\APTSimulator_pw_apt.zip"
-  when: win_aptsimulator_dl
+  when: win_aptsimulator_dl and not aptarchive.stat.exists
 
+- name: Check if already have APTSimulator unarchived
+  win_stat:
+    path: "{{ win_temp_dir }}\\APTSimulator\\APTSimulator.bat"
+  register: aptfolder
 - name: Testing Detections | Unarchive NextronSystems APTSimulator
   win_shell: "7z.exe x -y -tzip -papt APTSimulator_pw_apt.zip"
   args:
     chdir: "{{ win_temp_dir }}"
 #    creates: "{{ win_temp_dir }}\\APTSimulator\\APTSimulator.bat"
-  when: win_aptsimulator_dl
+  when: win_aptsimulator_dl and not aptfolder.stat.exists
 
 ## FIXME! batch mode?
 - name: Testing Detections | Execute NextronSystems APTSimulator
