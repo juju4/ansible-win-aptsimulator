@@ -44,3 +44,4 @@
   win_copy:
     content: "{{ aptsimul.stdout | default() }}"
     dest: "{{ win_log_dir }}\\aptsimulator-log.txt"
+  when: aptsimul is defined and aptsimul.stdout is defined
