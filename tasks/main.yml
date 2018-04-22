@@ -8,5 +8,24 @@
     - "{{ win_temp_dir }}"
     - "{{ win_log_dir }}"
 
-- include: testing-aptsimulator.yml
-- include: testing-aptsimulator-detections.yml
+- block:
+    - include: testing-aptsimulator.yml
+    - include: testing-aptsimulator-detections.yml
+  when: not win_aptsimulator_become
+
+- block:
+    - name: Ensure attacker user exists
+      win_user
+      win_user:
+        name: "{{ win_aptsimulator_user }}"
+        password: "{{ win_aptsimulator_user_pass }}"
+        state: present
+        groups:
+          - Administrators
+    - include: testing-aptsimulator.yml
+      become: yes
+      become_user: "{{ win_aptsimulator_user }}"
+    - include: testing-aptsimulator-detections.yml
+      become: yes
+      become_user: "{{ win_aptsimulator_user }}"
+  when: win_aptsimulator_become

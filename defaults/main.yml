@@ -6,5 +6,8 @@ win_log_dir: 'c:\ProgramData\ansible\log'
 win_aptsimulator_v: 0.8.0
 win_aptsimulator_dl: true
 win_aptsimulator_execute: true
+win_aptsimulator_become: false
+win_aptsimulator_user: "_attackertest"
+win_aptsimulator_user_pass: "_Password_CI_CD_to_be_revoked1_"
 
 win_aptsimulator_testing_inspec: true
