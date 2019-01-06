@@ -3,7 +3,7 @@ dist: trusty
 language: python
 python: "2.7"
 before_install:
- - ln -s ansible-win-aptsimulator ../juju4.win-aptsimulator
+ - ln -s ansible-win-aptsimulator ../juju4.win_aptsimulator
 install:
   - sudo apt-get install libxml2-utils
   - pip install ansible ansible-lint

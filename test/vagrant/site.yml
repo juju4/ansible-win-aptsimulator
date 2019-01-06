@@ -3,4 +3,4 @@
 - hosts: all
   become_method: runas
   roles:
-    - juju4.win-aptsimulator
+    - juju4.win_aptsimulator
