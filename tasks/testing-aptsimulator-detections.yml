@@ -11,7 +11,8 @@
         state: present
 
     - name: testing | run aptsimulator-baseline (very slow...)
-      win_command: "c:\\opscode\\inspec\\bin\\inspec.bat exec https://github.com/juju4/aptsimulator-baseline >{{ win_log_dir }}\\inspec-aptsimulator.log"
+      win_command: "c:\\opscode\\inspec\\bin\\inspec.bat exec
+                    https://github.com/juju4/aptsimulator-baseline >{{ win_log_dir }}\\inspec-aptsimulator.log"
       ignore_errors: true
 
     - name: testing | inspec results
