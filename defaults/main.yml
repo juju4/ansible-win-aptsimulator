@@ -11,3 +11,4 @@ win_aptsimulator_user: "_attackertest"
 win_aptsimulator_user_pass: "_Password_CI_CD_to_be_revoked1_"
 
 win_aptsimulator_testing_inspec: true
+win_aptsimulator_testing_inspec_display_log: false

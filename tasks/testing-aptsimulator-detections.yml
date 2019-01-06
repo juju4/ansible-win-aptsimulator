@@ -19,5 +19,6 @@
       win_shell: "Get-Content -Path \"{{ win_log_dir }}\\inspec-aptsimulator.log\""
       changed_when: false
       ignore_errors: true
+      when: win_aptsimulator_testing_inspec_display_log
 
   when: win_aptsimulator_testing_inspec
