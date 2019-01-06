@@ -8,9 +8,9 @@
     - win_osquery_interval: 60
     - win_osquery_interval2: 60
   roles:
-    - juju4.win-eventlog
-    - juju4.win-audit
-    - juju4.win-applocker
-    - juju4.win-sysmon
-    - juju4.win-osquery
-    - juju4.win-aptsimulator
+    - juju4.win_eventlog
+    - juju4.win_audit
+    - juju4.win_applocker
+    - juju4.win_sysmon
+    - juju4.win_osquery
+    - juju4.win_aptsimulator
