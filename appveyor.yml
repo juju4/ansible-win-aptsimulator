@@ -115,9 +115,6 @@ on_finish:
 
 on_failure:
 - ps: |
-    Get-ChildItem C:\ -recurse -file |ForEach-Object {if($_ -match '.+?exe$') {Get-AuthenticodeSignature $_.fullname}} | where {$_.IsOSBinary} |ForEach-Object { write-host $_.path }
-    True
-- ps: |
     Get-WinEvent -LogName 'Microsoft-Windows-AppLocker/EXE and DLL' | Where { $_.ID -eq 8004 }
     True
 
