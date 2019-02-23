@@ -14,6 +14,8 @@
       win_command: "c:\\opscode\\inspec\\bin\\inspec.bat exec
                     https://github.com/juju4/aptsimulator-baseline >{{ win_log_dir }}\\inspec-aptsimulator.log"
       ignore_errors: true
+      async: 3600
+      poll: 120
 
     - name: testing | inspec results
       win_shell: "Get-Content -Path \"{{ win_log_dir }}\\inspec-aptsimulator.log\""
