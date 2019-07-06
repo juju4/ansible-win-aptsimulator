@@ -5,7 +5,6 @@
   win_chocolatey:
     name: 7zip
     state: present
-    upgrade: no
 
 - name: Check if already have APTSimulator archive
   win_stat:
