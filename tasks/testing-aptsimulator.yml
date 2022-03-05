@@ -25,7 +25,7 @@
   win_shell: "7z.exe x -y -tzip -papt APTSimulator_pw_apt.zip"
   args:
     chdir: "{{ win_temp_dir }}"
-#    creates: "{{ win_temp_dir }}\\APTSimulator\\APTSimulator.bat"
+    # creates: "{{ win_temp_dir }}\\APTSimulator\\APTSimulator.bat"
   when: win_aptsimulator_dl and not aptfolder.stat.exists
 
 ## FIXME! batch mode?
