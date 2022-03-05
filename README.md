@@ -1,5 +1,5 @@
-[![Appveyor - master](https://ci.appveyor.com/api/projects/status/fefrr0ib22qcsaes/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/master)
-[![Appveyor - devel](https://ci.appveyor.com/api/projects/status/fefrr0ib22qcsaes/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/devel)
+[![Appveyor - master](https://ci.appveyor.com/api/projects/status/fefrr0ib22qcsaes/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-aptsimulator/branch/master)
+[![Appveyor - devel](https://ci.appveyor.com/api/projects/status/fefrr0ib22qcsaes/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-aptsimulator/branch/devel)
 
 # Windows APTSimulator ansible role
 
