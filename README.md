@@ -1,6 +1,3 @@
-[![Build Status - Master](https://travis-ci.org/juju4/ansible-win-aptsimulator.svg?branch=master)](https://travis-ci.org/juju4/ansible-win-aptsimulator)
-[![Build Status - Devel](https://travis-ci.org/juju4/ansible-win-aptsimulator.svg?branch=devel)](https://travis-ci.org/juju4/ansible-win-aptsimulator/branches)(Syntax Only)
-
 [![Appveyor - Master](https://ci.appveyor.com/api/projects/status/fefrr0ib22qcsaes?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-aptsimulator)
 ![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/fefrr0ib22qcsaes/branch/devel?svg=true)
 
