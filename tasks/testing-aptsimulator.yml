@@ -33,7 +33,7 @@
   win_command: "cmd.exe /c APTSimulator.bat -b"
   args:
     chdir: "{{ win_temp_dir }}\\APTSimulator"
-  when: win_aptsimulator_execute
+  when: win_aptsimulator_execute|bool
   register: aptsimul
   ignore_errors: true
   async: 600

@@ -11,7 +11,7 @@
 - block:
     - include: testing-aptsimulator.yml
     - include: testing-aptsimulator-detections.yml
-  when: not win_aptsimulator_become
+  when: not win_aptsimulator_become|bool
 
 - block:
     - name: Ensure attacker user exists
@@ -27,4 +27,4 @@
     - include: testing-aptsimulator-detections.yml
       become: yes
       become_user: "{{ win_aptsimulator_user }}"
-  when: win_aptsimulator_become
+  when: win_aptsimulator_become|bool
