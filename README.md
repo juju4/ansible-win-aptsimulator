@@ -1,5 +1,5 @@
-[![Appveyor - Master](https://ci.appveyor.com/api/projects/status/fefrr0ib22qcsaes?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-aptsimulator)
-![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/fefrr0ib22qcsaes/branch/devel?svg=true)
+[![Appveyor - master](https://ci.appveyor.com/api/projects/status/fefrr0ib22qcsaes/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/master)
+[![Appveyor - devel](https://ci.appveyor.com/api/projects/status/fefrr0ib22qcsaes/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-osquery/branch/devel)
 
 # Windows APTSimulator ansible role
 
@@ -13,7 +13,9 @@ https://github.com/NextronSystems/APTSimulator
 It was tested on the following versions:
  * 2.3
  * 2.4
- * 2.5b2
+ * 2.5
+ * 4.10.0
+ * 5.3.0
 
 ### Operating systems
 
@@ -27,7 +29,7 @@ For example
 ```
 - host: all
   roles:
-    - juju4.win-aptsimulator
+    - juju4.win_aptsimulator
 ```
 
 Run
@@ -45,7 +47,7 @@ See defaults/main.yml for full scope
 This role has a travis basic test (for github, syntax check only), Appveyor test and a Vagrantfile (test/vagrant).
 
 ```
-$ cd /path/to/roles/juju4.win-aptsimulator/test/vagrant
+$ cd /path/to/roles/juju4.win_aptsimulator/test/vagrant
 $ vagrant up
 $ vagrant provision
 $ vagrant destroy
@@ -59,4 +61,3 @@ $ ansible -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory -
 ## License
 
 BSD 2-clause
-
