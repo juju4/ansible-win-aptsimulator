@@ -2,7 +2,7 @@
 
 - block:
     - name: wait 2 minutes for osquery to collect and write data
-      pause:
+      ansible.builtin.pause:
         minutes: 2
 
     - name: testing | Ensure inspec is present
