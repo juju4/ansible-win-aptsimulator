@@ -10,7 +10,7 @@
   roles:
     - juju4.win_eventlog
     - juju4.win_audit
-    - juju4.win_applocker
-    - juju4.win_sysmon
-    - juju4.win_osquery
+    # - juju4.win_applocker
+    # - juju4.win_sysmon
+    # - juju4.win_osquery
     - juju4.win_aptsimulator
